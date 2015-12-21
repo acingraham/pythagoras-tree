@@ -1,5 +1,4 @@
 .block {
-    border-radius: 0%;
     position: absolute;
     top: -70%;
 }
@@ -19,59 +18,34 @@
     animation-timing-function: ease-in-out;
 }
 
-
-@keyframes leftShift {
-    from {
-        transform: rotate(-35deg)
-    }
-    to {
-        transform: rotate(-55deg)
-    }
-}
-
-
-/*
-@keyframes leftShift {
-    0%   {transform: rotate(-45deg);}
-    25%   {transform: rotate(-55deg);}
-    50%   {transform: rotate(-45deg);}
-    75%   {transform: rotate(-35deg);}
-    100% {transform: rotate(-45deg);}
-}
-*/
-
-@keyframes rightShift {
-
-    from {
-        transform: rotate(55deg)
-    }
-    to {
-        transform: rotate(35deg)
-    }
-    
-    /*
-    0%   {transform: rotate(45deg);}
-    25%   {transform: rotate(35deg);}
-    50%   {transform: rotate(45deg);}
-    75%   {transform: rotate(55deg);}
-    100% {transform: rotate(45deg);}
-    */
-}
-
 .left {
     left: 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
-    animation-name: leftShift;
+    /*animation-name: leftSway;*/
 }
 
 .right {
     right: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
-    animation-name: rightShift;
+    /*animation-name: rightSway;*/
 }
 
-.right:hover {
-    transform: rotate(55deg);
+@keyframes leftSway {
+    from {
+        transform: rotate(-35deg);
+    }
+    to {
+        transform: rotate(-55deg);
+    }
+}
+
+@keyframes rightSway {
+    from {
+        transform: rotate(55deg);
+    }
+    to {
+        transform: rotate(35deg);
+    }
 }
