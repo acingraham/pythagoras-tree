@@ -1,6 +1,8 @@
 .block {
     position: absolute;
     top: -70%;
+    height: 70.71067811865476%;
+    width: 70.71067811865476%;
 }
 
 #root {
