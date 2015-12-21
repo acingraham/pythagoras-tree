@@ -1,28 +1,48 @@
-function drawBlock(parent, width, depth) {
-    var newWidth = Math.sqrt(2 * Math.pow(width / 2, 2));
-    var color = 'rgba(' + [0, Math.floor(depth * 25), 100, (1 - depth / 40)].join(',') + ');';
-    console.log(color);
-    var style = 'width: ' + newWidth + 'px;height: ' + newWidth + 'px;background-color: ' + color;
-    var left = $('<div class="block left" style="' + style + '"></div>');
-    var right = $('<div class="block right" style="' + style + '"></div>');
+console.time('tree');
 
-    left.hide();
-    right.hide();
+// TODO - Return the entire HTML for that depth.  
+var map = {};
+function getData(depth, width) {
+
+    var color,
+        left,
+        nextWidth,
+        right,
+        style;
+
+    if (!map[depth]) {
+
+        color = 'rgba(' + [0, Math.floor(depth * 25), 100, (1 - depth / 40)].join(',') + ');';
+        nextWidth = Math.sqrt(2 * Math.pow(width / 2, 2));
+        style = 'width: ' + nextWidth + 'px;height: ' + nextWidth + 'px;background-color: ' + color;
+        left = $('<div class="block left" style="' + style + '"></div>');
+        right = $('<div class="block right" style="' + style + '"></div>');
+
+        map[depth] = {
+            left: left,
+            nextWidth: nextWidth,
+            right: right
+        };
+    }
+
+    return map[depth];
+}
+
+function drawBlock(parent, width, depth) {
+    var data  = getData(depth, width),
+        left  = data.left.clone(),
+        right = data.right.clone();
 
     parent.append(left);
     parent.append(right);
 
-    left.fadeIn(1000);
-    right.fadeIn(1000);
-
     if (depth > 0) {
-        setTimeout(function() {
-            drawBlock(left, newWidth, depth - 1);
-            drawBlock(right, newWidth, depth - 1);
-        }, 500);
+        drawBlock(left, data.nextWidth, depth - 1);
+        drawBlock(right, data.nextWidth, depth - 1);
     }
 
 }
 
 // TODO - Append to DOM once it's completely built out
-drawBlock($('#root'), 100, 7);
+drawBlock($('#root'), 100, 10);
+console.timeEnd('tree');
