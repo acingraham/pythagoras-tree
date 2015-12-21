@@ -1,0 +1,77 @@
+.block {
+    border-radius: 0%;
+    position: absolute;
+    top: -70%;
+}
+
+#root {
+    background-color: rgba(0, 200, 150, 1);
+    height: 100px;
+    left: 500px;
+    top: 500px;
+    width: 100px;
+}
+
+.left, .right {
+    animation-direction: alternate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes leftShift {
+    from {
+        transform: rotate(-35deg)
+    }
+    to {
+        transform: rotate(-55deg)
+    }
+}
+
+
+/*
+@keyframes leftShift {
+    0%   {transform: rotate(-45deg);}
+    25%   {transform: rotate(-55deg);}
+    50%   {transform: rotate(-45deg);}
+    75%   {transform: rotate(-35deg);}
+    100% {transform: rotate(-45deg);}
+}
+*/
+
+@keyframes rightShift {
+
+    from {
+        transform: rotate(55deg)
+    }
+    to {
+        transform: rotate(35deg)
+    }
+    
+    /*
+    0%   {transform: rotate(45deg);}
+    25%   {transform: rotate(35deg);}
+    50%   {transform: rotate(45deg);}
+    75%   {transform: rotate(55deg);}
+    100% {transform: rotate(45deg);}
+    */
+}
+
+.left {
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    animation-name: leftShift;
+}
+
+.right {
+    right: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    animation-name: rightShift;
+}
+
+.right:hover {
+    transform: rotate(55deg);
+}
