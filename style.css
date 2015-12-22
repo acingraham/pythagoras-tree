@@ -1,33 +1,38 @@
+body {
+    overflow: hidden;
+}
+
 .block {
+    background-color: rgba(0, 200, 150, 1);
+    height: 70.71067811865476%;
     position: absolute;
     top: -70%;
-    height: 70.71067811865476%;
     width: 70.71067811865476%;
 }
 
 #root {
-    background-color: rgba(0, 200, 150, 1);
-    height: 100px;
-    left: 500px;
-    top: 500px;
-    width: 100px;
-}
-
-.left, .right {
     animation-direction: alternate;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    height: 100px;
+    left: 500px;
+    left: -moz-calc(50% - 50px);
+    left: -webkit-calc(50% - 50px);
+    left: calc(50% - 50px);
+    top: 500px;
+    transform: rotate(0);
+    width: 100px;
 }
 
-.left {
+.block:nth-child(1) {
     left: 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
     /*animation-name: leftSway;*/
 }
 
-.right {
+.block:nth-child(2) {
     right: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
