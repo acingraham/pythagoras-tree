@@ -1,3 +1,23 @@
+div {
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: 200px;
+}
+.square {
+    box-shadow:
+    0 0 0 25px #00C896;
+}
+
+.diamond {
+    transform: rotate(45deg);
+    box-shadow:
+    -53.033008588991066px -17.67766952966369px 0 17.67766952966369px #00C896,
+    -17.67766952966369px -53.033008588991066px 0 17.67766952966369px #00C896;
+}
+
+/*
 body {
     overflow: hidden;
 }
@@ -29,3 +49,4 @@ div:nth-child(2) {
     transform: rotate(45deg);
     transform-origin: 100% 100%;
 }
+*/

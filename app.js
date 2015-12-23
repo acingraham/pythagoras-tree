@@ -1,5 +1,5 @@
 console.time('tree');
-
+/*
 function addBranches(content) {
     return '<div>' + content + '</div><div>' + content + '</div>';
 }
@@ -12,4 +12,5 @@ for(var i = 0; i < order; ++i) {
 }
 
 document.getElementById('root').innerHTML = content;
+*/
 console.timeEnd('tree');
