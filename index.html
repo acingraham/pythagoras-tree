@@ -4,7 +4,61 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="root"></div>
+    <div class="controls">
+        <h2 class="heading">Pythagoras Tree</h2>
+
+        <div class="control">
+            <span>Order</span>
+            <input type="range" min="0" max="10" id="order">
+        </div>
+
+        <div class="control">
+            <span>Width</span>
+            <input type="range" min="1" max="90" id="width">
+        </div>
+
+        <div class="control">
+            <span>Height</span>
+            <input type="range" min="1" max="90" id="height">
+        </div>
+
+        <div class="control">
+            <span>Border Radius</span>
+            <input type="range" min="0" max="50" id="borderRadius">
+        </div>
+
+        <div class="control">
+            <span>Opacity</span>
+            <input type="range" min="0" max="100" id="opacity">
+        </div>
+
+        <div class="control">
+            <span>Angle</span>
+            <input type="range" min="10" max="80" id="angle">
+        </div>
+
+        <div class="control">
+            <span>Red</span>
+            <input type="range" min="0" max="255" id="red">
+        </div>
+
+        <div class="control">
+            <span>Green</span>
+            <input type="range" min="0" max="255" id="green">
+        </div>
+
+        <div class="control">
+            <span>Blue</span>
+            <input type="range" min="0" max="255" id="blue">
+        </div>
+
+        <button id="random">Random</button>
+    </div>
+    <div class="tree">
+        <div id="root" class="block"></div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

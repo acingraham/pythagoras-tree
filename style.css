@@ -1,31 +1,80 @@
-body {
-    overflow: hidden;
+html, body {
+    height: 100%;
 }
 
-div {
-    background-color: rgba(0, 200, 150, 1);
-    height: 70.71067811865476%;
+body {
+    margin: 0;
+}
+
+.controls {
+    align-items: stretch;
+    background-color: #4d4d4d;
+    color: #b3b3b3;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    height: 100%;
+    justify-content: space-between;
+    width: 33%;
+}
+
+.heading {
+    align-self: center;
+}
+
+.control {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.tree {
+    background-color: #333333;
+    float: right;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 67%;
+}
+
+.block {
     position: absolute;
-    top: -70%;
-    width: 70.71067811865476%;
+    transition: 1s;
 }
 
 #root {
-    height: 100px;
-    left: calc(50% - 50px);
-    top: 500px;
+    height: 80px;
+    left: calc(50% - 37.5px);
+    top: 70%;
     transform: rotate(0);
-    width: 100px;
+    width: 80px;
 }
 
-div:nth-child(1) {
+.block:nth-child(1) {
+    height: 70.71067811865476%;
     left: 0;
+    top: -70.71067811865476%;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
+    width: 70.71067811865476%;
 }
 
-div:nth-child(2) {
+.block:nth-child(2) {
+    height: 70.71067811865476%;
     right: 0;
+    top: -70.71067811865476%;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
+    width: 70.71067811865476%;
+}
+
+input[type=range] {
+    width: 125px;
+}
+
+#random {
+    align-self: center;
+    color: #4d4d4d;
+    margin-bottom: 10px;
+    width: 150px;
 }
